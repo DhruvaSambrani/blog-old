@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+<url>
+    <loc>https://dhruvasambrani.github.io/blog/posts/2021-08-20%20010631/index.html</loc>
+    <lastmod>2021-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://dhruvasambrani.github.io/blog/index.html</loc>
+    <lastmod>2021-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://dhruvasambrani.github.io/blog/posts/index.html</loc>
+    <lastmod>0001-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://dhruvasambrani.github.io/blog/404/index.html</loc>
+    <lastmod>2021-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
+    <loc>https://dhruvasambrani.github.io/blog/posts/2021-08-20%20010715/index.html</loc>
+    <lastmod>2021-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+</urlset>
