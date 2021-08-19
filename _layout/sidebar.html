@@ -1,0 +1,17 @@
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+        <h1><a href="/">{{fill title}}</a></h1>
+      <p class="lead">{{fill description}}</p>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item {{ispage index.html}}active{{end}}" href="/">Home</a>
+      <a class="sidebar-nav-item {{ispage menu1/*}}active{{end}}" href="/posts/">List of blogs</a>
+      <a class="sidebar-nav-item {{ispage menu2/*}}active{{end}}" href="/tags/">tags</a>
+      <hr>
+      <p class="sidebar-nav-heading">Recent Posts</p>
+    </nav>
+    <p>&copy; {{fill author}}.</p>
+  </div>
+</div>
+<div class="content container">
