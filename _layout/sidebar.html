@@ -6,10 +6,9 @@
     </div>
     <nav class="sidebar-nav">
       <a class="sidebar-nav-item {{ispage index.html}}active{{end}}" href="/">Home</a>
-      <a class="sidebar-nav-item {{ispage menu1/*}}active{{end}}" href="/posts/">List of blogs</a>
-      <a class="sidebar-nav-item {{ispage menu2/*}}active{{end}}" href="/tags/">tags</a>
-      <hr>
-      <p class="sidebar-nav-heading">Recent Posts</p>
+      <a class="sidebar-nav-item {{ispage posts/*}}active{{end}}" href="/posts/">Posts</a>
+      <a class="sidebar-nav-item" href="/#recent_posts">Recent Posts</a>
+      {{recents}}
     </nav>
     <p>&copy; {{fill author}}.</p>
   </div>

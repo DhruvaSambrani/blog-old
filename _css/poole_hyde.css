@@ -277,6 +277,10 @@ html {
   color: #fff;
 }
 
+.sidebar ul {
+  padding-left: 20px;
+}
+
 /* About section */
 .sidebar-about h1 {
   color: #fff;
@@ -293,6 +297,7 @@ html {
 .sidebar-nav-item {
   display: block;
   line-height: 1.75;
+  color: #fff;
 }
 
 a.sidebar-nav-item:hover,
@@ -302,6 +307,10 @@ a.sidebar-nav-item:focus {
 
 .sidebar-nav-item.active {
   font-weight: bold;
+}
+
+.sidebar-nav-recents {
+  font-size: small;
 }
 
 /* Sticky sidebar
@@ -333,7 +342,6 @@ a.sidebar-nav-item:focus {
 
 @media (min-width: 768px) {
   .content {
-    max-width: 45rem;
     margin-left: 15rem;
     margin-right: 2rem;
   }
