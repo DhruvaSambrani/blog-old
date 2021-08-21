@@ -7,10 +7,10 @@ function _get_posts()
     filter(!startswith("index"), fns)
 end
 function _get_summary(fn)
-    lines = first(readlines("posts/"*fn*".md"), 25)
+    lines = first(readlines("posts/"*fn*".md"), 15)
     cont = join(lines, "\n")
-    if length(lines) == 25
-        string(cont, "\n\n[Read more](posts/$(fn))")
+    if length(lines) == 15
+        string(cont, "\n\n@@readmore\n[...Read more](posts/$(fn))\n@@")
     else
         cont
     end
@@ -31,12 +31,11 @@ function hfun_recents()
 end
 function hfun_recents_long()
     recent_posts = last(_get_posts(), 5)
-    println(recent_posts)
     deets = map(recent_posts) do fn
         text = fd2html(_get_summary(fn), internal=true)
         title = _get_title(fn)
         date = _get_date(fn)
-        "<details><summary>$(title) on $(date)</summary>$(text)</details>"
+        """<details class="style2"><summary>$(title) on $(date)</summary><div class="details-content">$(text)</div></details>"""
     end
     return join(deets, "\n")
 end
