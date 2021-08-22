@@ -44,25 +44,34 @@ function apply(TEXT, fixes)
     String(take!(output))
 end
 
+r(DIR, FILENAME, EXT) = s->Dict('%' => DIR, '^' => FILENAME, '&' => EXT)[s]
+
 function post_apply(fixed, FILE, ISFILE)
     clear()
     println(fixed)
 
-    FILENAME, EXT = splitext(FILE)
-    DIR = dirname(FILE)
+    FILENAME, EXT = string.(splitext(basename(FILE)))
+    DIR = string(dirname(FILE))
+    _r = r(DIR, FILENAME, EXT)
+
     fileops = ISFILE ? ["Backup and overwrite", "Overwrite"] : []
     response = request("All Errors fixed! How to continue?", RadioMenu(vcat(["New File", "Write to console"], fileops)))
     if response == 1
         println("Path to new file" * (ISFILE ? "(`%` => dirname(in-file), `^` => filename(in-file), `&` => ext(in-file)): " : ": "))
-        newpath = replace(chomp(readline()), "%" => DIR, "^" => FILENAME, "&" => EXT)
+        newpath = replace(readline(), ['&', '^', '%']=>_r)
         println("Saving to $(newpath). Will overwrite this path if exists. Continue? [Yn]: ")
-        chomp(readline()) == "n" ? post_apply(fixed, FILE, ISFILE) : write(newpath, fixed)
+        if readline() == "n" 
+            post_apply(fixed, FILE, ISFILE)
+        else
+            write(newpath, fixed)
+        end
     elseif response == 2
         clear()
         println(fixed)
     elseif response == 3
         mv(FILE, FILE*".bak")
-    elseif response in [3, 4]
+        write(FILE, fixed)
+    elseif response == 4
         write(FILE, fixed)
     end
 end
