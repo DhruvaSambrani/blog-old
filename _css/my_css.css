@@ -25,12 +25,9 @@ s {
 /* # The Rotating Marker # */
 details summary::-webkit-details-marker { display: none; }
 summary::before {
-  font-family: "Hiragino Mincho ProN", "Open Sans", sans-serif;
-  content: "▶";
   position: absolute;
   top: 1rem;
   left: 0.8rem;
-  transform: rotate(0);
   transform-origin: center;
   transition: 0.2s transform ease;
 }
@@ -74,7 +71,7 @@ details.style2 summary::before {
 }
 details[open].style2 > summary:before {
   transform: rotate(90deg);
-  color: #F00 !important;
+  color: #FF4800 !important;
   transition: color ease 2s, transform ease 1s;
 }
 
@@ -83,23 +80,21 @@ details {
   border-radius: 4px;
   box-sizing: border-box;
   margin-top: 5px;
-  background: white;
+  background: #202020;
 }
 summary {
-  border: 4px solid transparent;
-  outline: none;
+  border: 2px solid #888;
   padding: 0.4rem;
   display: block;
-  background: #666;
-  color: white;
+  background: #333;
   padding-left: 2.2rem;
   position: relative;
   cursor: pointer;
-  color: #FFCB00;
+  color: #0BF69E;
 }
 details[open] summary,
 summary:hover {
-  background: #444;
+  background: #222;
 }
 summary:hover strong,
 details[open] summary strong,

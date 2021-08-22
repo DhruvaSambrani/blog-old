@@ -3,11 +3,12 @@
 ================================================================== */
 
 :root {
-  --block-background: hsl(0, 0%, 94%);
+  --block-background: hsl(0, 0%, 10%);
   --output-background: hsl(0, 0%, 98%);
   --small: 14px;
   --normal: 19px;
-  --text-color: hsv(0, 0%, 20%);
+  --text-color: hsl(0, 0%, 70%);
+  --bright: hsl(0, 0%, 90%);
 }
 
 /* ==================================================================
@@ -15,9 +16,10 @@
 ================================================================== */
 
 html {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: var(--normal);
-  color: var(--text-color);
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-size: var(--normal) !important;
+  color: var(--text-color) !important;
+  background: #282828 !important;
 }
 
 /* ==================================================================
@@ -64,10 +66,9 @@ html {
   font-family: Arial, serif;
   color: #a6a2a0;
   text-align: center;
-  margin-top: 6em;
+  margin-top: 4em;
   border-top: 1px solid lightgrey;
   padding-top: 2em;
-  margin-bottom: 4em;
 }
 
 /* ==================================================================
@@ -81,8 +82,7 @@ html {
 
 .franklin-content {
   position: relative;
-  padding-left: 12.5%;
-  padding-right: 12.5%;
+  padding: 2.5rem;
   line-height: 1.35em;
 }
 
@@ -107,9 +107,9 @@ html {
     TITLES
 ================================================================== */
 
-.franklin-content h1 { font-size: 24px; }
-.franklin-content h2 { font-size: 22px; }
-.franklin-content h3 { font-size: 20px; }
+.franklin-content h1 { font-size: 40px; }
+.franklin-content h2 { font-size: 27px; }
+.franklin-content h3 { font-size: 23px; }
 
 .franklin-content h1,
 h2,
@@ -118,6 +118,8 @@ h4,
 h5,
 h6 {
   text-align: left;
+  font-family: "Fira Code", monospace;
+  color: #00C3FF;
 }
 
 .franklin-content h1 {
@@ -187,12 +189,24 @@ td {
 }
 
 .franklin-content a {
-  color: #004de6;
+  color: #fecb03;
   text-decoration: none;
 }
 
 .franklin-content a:hover {
   text-decoration: underline;
+}
+
+.franklin-content a code {
+  color: inherit;
+}
+
+.franklin-content strong {
+  color: var(--bright);
+}
+
+.franklin-content hr {
+  border-color: var(--text-color);
 }
 
 /* ==================================================================
@@ -282,20 +296,11 @@ body { counter-reset: eqnum; }
 
 code {
   background-color: var(--block-background);
+  color: var(--bright);
   padding: 0.1em 0.2em;
   border-radius: 2px;
   font-size: var(--small);
 }
-
-/* .franklin-content code { */
-
-/* background-color: rgba(27,31,35,0.05); */
-
-/* padding: 0.1em 0.2em; */
-
-/* border-radius: 2px; */
-
-/* font-size: 90%; } */
 
 .hljs {
   font-size: var(--small);

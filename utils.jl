@@ -10,7 +10,7 @@ function _get_summary(fn)
     lines = first(readlines("posts/"*fn*".md"), 15)
     cont = join(lines, "\n")
     if length(lines) == 15
-        string(cont, "\n\n@@readmore\n[...Read more](posts/$(fn))\n@@")
+        string(cont, "\n\n@@readmore\n[… Read more](posts/$(fn))\n@@")
     else
         cont
     end
@@ -40,14 +40,3 @@ function hfun_recents_long()
     return join(deets, "\n")
 end
 
-function hfun_m1fill(vname)
-  var = vname[1]
-  return pagevar("index", var)
-end
-
-function lx_baz(com, _)
-  # keep this first line
-  brace_content = Franklin.content(com.braces[1]) # input string
-  # do whatever you want here
-  return uppercase(brace_content)
-end
