@@ -1,0 +1,39 @@
+#! /bin/sh
+
+spcheck() {
+    julia -q --project LanguageTool.jl $@
+}
+
+new() {
+    sensible-editor "$(dirname $0)/posts/$(date +%Y-%m-%d\ %H%M%S)"
+}
+
+_tree() {
+    tree $(dirname $0)/posts
+}
+
+publish() {
+    git add -A
+    git commit -am "blog update $(date +%Y-%m-%d\ %H%M%S)"
+    git push
+}
+
+help() {
+    echo "Usage: blog action"
+    echo "Actions:"
+    echo "  spcheck fname [opts]\tRun LanguageTool.jl on \`fname\` with \`opts\` options"
+    echo "  new\t\t\tNew post"
+    echo "  tree\t\t\tList posts"
+    echo "  publish\t\tCommit and push all changes"
+    echo "  help\t\t\tDisplay this help screen"
+}
+
+case "${1}" in
+    spcheck) spcheck ${@:2};;
+    new) new;;
+    tree) _tree;;
+    publish) publish;;
+    *) help;;
+esac
+
+
