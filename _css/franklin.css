@@ -66,7 +66,7 @@ html {
   font-family: Arial, serif;
   color: #a6a2a0;
   text-align: center;
-  margin-top: 4em;
+  margin-top: 6rem;
   border-top: 1px solid lightgrey;
   padding-top: 2em;
 }
@@ -82,7 +82,7 @@ html {
 
 .franklin-content {
   position: relative;
-  padding: 2.5rem;
+  padding: 2rem;
   line-height: 1.35em;
 }
 
@@ -98,8 +98,7 @@ html {
 /* On narrow device, reduce margins. */
 @media (max-width: 480px) {
   .franklin-content {
-    padding-left: 6%;
-    padding-right: 6%;
+    padding: 6%;
   }
 }
 
@@ -123,10 +122,11 @@ h6 {
 }
 
 .franklin-content h1 {
+  text-align: center;
   padding-bottom: 0.5em;
   border-bottom: 3px double lightgrey;
-  margin-top: 1.5em;
-  margin-bottom: 1em;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .franklin-content h2 {
