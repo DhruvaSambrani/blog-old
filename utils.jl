@@ -4,7 +4,7 @@ _get_date(filename) = split(filename, " ")[1]
 _get_title(filename) = pagevar("posts/$(filename)", "post_title")
 function _get_posts()
     fns = readdir("posts") .|> splitext .|> first
-    filter(!startswith("index"), fns)
+    reverse(filter(!startswith("index"), fns))
 end
 function _get_summary(fn)
     lines = first(readlines("posts/"*fn*".md"), 15)
