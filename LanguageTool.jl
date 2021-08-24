@@ -80,7 +80,7 @@ function post_apply(fixed, FILE, ISFILE)
         println(stderr, "Path to new file" * (ISFILE ? "(`%` => dirname(in-file), `^` => filename(in-file), `&` => ext(in-file)): " : ": "))
         newpath = replace(readline(), ['&', '^', '%']=>_r)
         println(stderr, "Saving to $(newpath). Will overwrite this path if exists. Continue? [Yn]: ")
-        if readline() == "n" 
+        if readline() == "n"
             post_apply(fixed, FILE, ISFILE)
         else
             write(newpath, fixed)
@@ -126,7 +126,7 @@ end
 
 s = ArgParseSettings(
         prog="LanguageTool",
-        description="Checks grammar and spelling. Requires LanguageTool. 
+        description="Checks grammar and spelling. Requires LanguageTool.
 Install from https://languagetool.org/download/LanguageTool-stable.zip.
 LanguageTool documentation here - https://dev.languagetool.org/http-server
 Beware of overwriting by piping (`>`) to existing file. An error can wipe data as no text is written to stdout until explicitly requested.
@@ -139,7 +139,7 @@ Preferably, save stdout to a variable and write that.")
     "--ltpath", "-l"
         help = "Directory where LanguageTool jar files reside"
         default = "~/.LanguageTool"
-        arg_type = String 
+        arg_type = String
     "--no_run_server", "-n"
         help = "Do not attempt to start a new server"
         action = :store_true
